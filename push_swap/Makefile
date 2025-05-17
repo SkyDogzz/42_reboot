@@ -11,7 +11,32 @@ SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = include
 
-SRC_FILES = dlst/ft_dlstadd_back.c   dlst/ft_dlstclear.c   dlst/ft_dlstfirst.c  dlst/ft_dlstlast.c  dlst/ft_dlstnew.c   dlst/ft_dlstsize_full.c    instruction/instruction_utils1.c  main.c                 parse/ft_better_atoi.c  parse/parse.c dlst/ft_dlstadd_front.c  dlst/ft_dlstdelone.c  dlst/ft_dlstiter.c   dlst/ft_dlstmap.c   dlst/ft_dlstsize.c  instruction/instruction.c  instruction/instruction_utils2.c  operation/operation.c  parse/ft_split.c        utils.c
+SRC_FILES = dlst/ft_dlstadd_back.c \
+			dlst/ft_dlstclear.c \
+			dlst/ft_dlstfirst.c \
+			dlst/ft_dlstlast.c \
+			dlst/ft_dlstnew.c \
+			dlst/ft_dlstsize_full.c \
+			instruction/instruction_utils1.c \
+			main.c \
+			parse/ft_better_atoi.c \
+			parse/parse.c \
+			dlst/ft_dlstadd_front.c \
+			dlst/ft_dlstdelone.c \
+			dlst/ft_dlstiter.c \
+			dlst/ft_dlstmap.c \
+			dlst/ft_dlstsize.c \
+			instruction/instruction.c \
+			instruction/instruction_utils2.c \
+			instruction/instruction_utils3.c \
+			operation/operation.c \
+			parse/ft_split.c \
+			utils.c \
+			small.c \
+			turkish/sort.c \
+			turkish/rot.c \
+			turkish/utils.c \
+			turkish/utils2.c
 
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 

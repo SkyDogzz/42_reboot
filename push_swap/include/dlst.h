@@ -1,9 +1,21 @@
-#ifndef LST_H
-# define LST_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dlst.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/17 10:28:28 by tstephan          #+#    #+#             */
+/*   Updated: 2025/05/17 10:40:03 by tstephan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef DLST_H
+# define DLST_H
 
 # include <stdlib.h>
 
-typedef struct s_dlist t_dlist;
+typedef struct s_dlist	t_dlist;
 typedef struct s_dlist
 {
 	void			*content;

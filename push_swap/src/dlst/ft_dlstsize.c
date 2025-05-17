@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:58:14 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 08:15:59 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/17 10:38:37 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_dlstsize(t_dlist *dlst)
 {
-	int	len = 0;
+	int	len;
 
+	len = 0;
 	while (dlst)
 	{
 		dlst = dlst->next;

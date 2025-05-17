@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:10:24 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 07:37:25 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/17 10:38:23 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,3 @@ void	ft_dlstclear(t_dlist **dlst, void (*del)(void *))
 		*dlst = tmp;
 	}
 }
-
