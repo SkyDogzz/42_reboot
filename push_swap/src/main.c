@@ -20,16 +20,16 @@ void	sort_three(t_dlist **inst, t_stack *stack)
 		execsa(inst, stack); // 2 1 3
 	else if (a > b && b > c)
 	{
-		execsa(inst, stack); // 3 2 1 → 2 3 1
-		execrra(inst, stack); // → 1 2 3
-	}
+	execsa(inst, stack); // 3 2 1 → 2 3 1
+	execrra(inst, stack); // → 1 2 3
+}
 	else if (a > b && b < c && a > c)
 		execra(inst, stack); // 3 1 2 → 1 2 3
 	else if (a < b && b > c && a < c)
 	{
-		execsa(inst, stack); // 1 3 2 → 3 1 2
-		execra(inst, stack); // → 1 2 3
-	}
+	execsa(inst, stack); // 1 3 2 → 3 1 2
+	execra(inst, stack); // → 1 2 3
+}
 	else if (a < b && b > c && a > c)
 		execrra(inst, stack); // 2 3 1 → 1 2 3
 }
@@ -63,6 +63,7 @@ void	sort_five(t_dlist **inst, t_stack *stack)
 {
 	t_dlist *min;
 
+	/*printf("got here\n");*/
 	while (ft_dlstsize(stack->a) > 3)
 	{
 		min = find_min(stack->a);
@@ -85,7 +86,10 @@ void	sort_five(t_dlist **inst, t_stack *stack)
 	execpa(inst, stack);
 }
 
-
+void	f(void * content)
+{
+	printf("%d\n", *(int *)content);
+}
 
 int	main(int argc, char **argv)
 {
@@ -96,14 +100,19 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 	else if (!is_sorted(stack.a))
 	{
-		if (ft_dlstsize(stack.a) < 3)
-			sort_three(&inst, &stack);
-		else if (ft_dlstsize(stack.a) < 5)
-			sort_five(&inst, &stack);
+
+	if (ft_dlstsize(stack.a) == 2)
+	{
+		if (*(int *)stack.a->content > *(int *)stack.a->next->content)
+			execsa(&inst, &stack);
 	}
-
+	else if (ft_dlstsize(stack.a) == 3)
+		sort_three(&inst, &stack);
+	else if (ft_dlstsize(stack.a) <= 5)
+		sort_five(&inst, &stack);
+	}
 	print_instructions(inst);
-
+	/*ft_dlstiter(stack.a, f);*/
 	ft_dlstclear(&inst, free);
 	ft_dlstclear(&stack.a, free);
 	ft_dlstclear(&stack.b, free);
