@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:09 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 12:57:34 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:33:03 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@
 # include <limits.h>
 # include <unistd.h>
 # include "dlst.h"
-
-typedef struct s_stack {
-	t_dlist	*a;
-	t_dlist	*b;
-}	t_stack;
 
 typedef struct s_move {
 	t_dlist	*node;

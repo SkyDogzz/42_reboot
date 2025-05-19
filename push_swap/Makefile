@@ -64,6 +64,30 @@ fclean: clean
 
 re: fclean all
 
+NAME_BONUS = checker
+
+BONUS_SRC_FILES = parse/parse.c \
+				  parse/ft_split.c \
+				  parse/ft_better_atoi.c \
+				  utils.c \
+				  dlst/ft_dlstadd_back.c \
+				  dlst/ft_dlstclear.c \
+				  dlst/ft_dlstfirst.c \
+				  dlst/ft_dlstlast.c \
+				  dlst/ft_dlstnew.c \
+				  dlst/ft_dlstsize_full.c \
+				  dlst/ft_dlstadd_front.c \
+				  dlst/ft_dlstdelone.c \
+				  dlst/ft_dlstiter.c \
+				  dlst/ft_dlstmap.c \
+				  dlst/ft_dlstsize.c \
+				  bonus/main.c
+BONUS_OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(BONUS_SRC_FILES:.c=.o))
+
+bonus: $(BONUS_OBJ_FILES)
+	@$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $(NAME_BONUS)
+	@echo "$(_CYAN)[BONUS]$(_END) Compilation avec les fonctionnalités bonus terminée ! ✨"
+
 ascii:
 	@echo $(_CYAN)$(_BOLD)
 	@echo "PUSH SWAP"

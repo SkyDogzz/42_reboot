@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:28 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 10:40:03 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:33:13 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ typedef struct s_dlist
 	struct s_dlist	*prev;
 	struct s_dlist	*next;
 }					t_dlist;
+
+typedef struct s_stack {
+	t_dlist	*a;
+	t_dlist	*b;
+}	t_stack;
 
 t_dlist		*ft_dlstnew(void *content);
 t_dlist		*ft_dlstadd_front(t_dlist **dlst, t_dlist *ne);

@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:32 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 12:57:42 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/19 18:22:07 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	turkish_sort(t_dlist **inst, t_stack *s)
 	t_move	best;
 
 	index_stack(s->a);
+	biggest_part(inst, s);
 	sort_three(inst, s);
 	while (s->b)
 	{
