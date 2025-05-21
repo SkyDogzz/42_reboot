@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:09 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/21 11:52:33 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:44:36 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 # include <unistd.h>
 # include "dlst.h"
 
-typedef struct s_move {
+typedef struct s_move
+{
 	t_dlist	*node;
 	t_dlist	*target;
 	int		cost_a;
@@ -32,23 +33,21 @@ typedef struct s_move {
 
 typedef enum e_op
 {
-    OP_PA,
-    OP_PB,
-    OP_SA,
-    OP_SB,
-    OP_SS,
-    OP_RA,
-    OP_RB,
-    OP_RR,
-    OP_RRA,
-    OP_RRB,
-    OP_RRR
-}   t_op;
+	OP_PA,
+	OP_PB,
+	OP_SA,
+	OP_SB,
+	OP_SS,
+	OP_RA,
+	OP_RB,
+	OP_RR,
+	OP_RRA,
+	OP_RRB,
+	OP_RRR
+}	t_op;
 
 bool	ft_parse_args(int argc, char **argv, t_stack *stack);
 bool	ft_isdup(t_dlist **dlst);
-
-// utils
 
 char	**ft_split(char const *s, char c);
 int		ft_countwords(const char *s, char c);

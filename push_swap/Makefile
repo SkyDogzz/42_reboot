@@ -13,17 +13,11 @@ INC_DIR = include
 
 SRC_FILES = dlst/ft_dlstadd_back.c \
 			dlst/ft_dlstclear.c \
-			dlst/ft_dlstfirst.c \
 			dlst/ft_dlstlast.c \
 			dlst/ft_dlstnew.c \
-			dlst/ft_dlstsize_full.c \
 			main.c \
 			parse/ft_better_atoi.c \
 			parse/parse.c \
-			dlst/ft_dlstadd_front.c \
-			dlst/ft_dlstdelone.c \
-			dlst/ft_dlstiter.c \
-			dlst/ft_dlstmap.c \
 			dlst/ft_dlstsize.c \
 			instruction/instruction.c \
 			instruction/instruction_utils1.c \
@@ -64,14 +58,8 @@ BONUS_SRC_FILES = parse/parse.c \
 				  utils.c \
 				  dlst/ft_dlstadd_back.c \
 				  dlst/ft_dlstclear.c \
-				  dlst/ft_dlstfirst.c \
 				  dlst/ft_dlstlast.c \
 				  dlst/ft_dlstnew.c \
-				  dlst/ft_dlstsize_full.c \
-				  dlst/ft_dlstadd_front.c \
-				  dlst/ft_dlstdelone.c \
-				  dlst/ft_dlstiter.c \
-				  dlst/ft_dlstmap.c \
 				  dlst/ft_dlstsize.c \
 				  gnl/get_next_line.c \
 				  gnl/get_next_line_utils.c \

@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 07:24:44 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/21 07:48:22 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:36:18 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ bool	is_sorted(t_dlist *stack)
 {
 	while (stack && stack->next)
 	{
-		if (*(int *)stack->content > *(int *)stack->next->content)
+		if (stack->value > stack->next->value)
 			return (false);
 		stack = stack->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:44 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/21 12:03:57 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:38:16 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	add_instruction(t_dlist **lst, t_op op)
 {
 	t_dlist	*new;
 
+	if (!lst)
+		return ;
 	new = ft_dlstnew((int)op);
 	if (!new)
 		return ;

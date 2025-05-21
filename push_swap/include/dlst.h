@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:28 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/21 11:45:47 by skydogzz         ###   ########.fr       */
+/*   Updated: 2025/05/21 21:41:44 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,16 @@ typedef struct s_dlist
 	struct s_dlist	*next;
 }					t_dlist;
 
-typedef struct s_stack {
+typedef struct s_stack
+{
 	t_dlist	*a;
 	t_dlist	*b;
 }	t_stack;
 
 t_dlist		*ft_dlstnew(int value);
-/*t_dlist		*ft_dlstadd_front(t_dlist **dlst, t_dlist *ne);*/
 t_dlist		*ft_dlstadd_back(t_dlist **dlst, t_dlist *ne);
 int			ft_dlstsize(t_dlist *dlst);
-/*int			ft_dlstsize_full(t_dlist *dlst);*/
-/*t_dlist		*ft_dlstfirst(t_dlist *dlst);*/
 t_dlist		*ft_dlstlast(t_dlist *dlst);
-/*void		ft_dlstiter(t_dlist *dlst, void (*f)(void *));*/
-/*t_dlist		*ft_dlstmap(t_dlist *dlst, void *(*f)(void *), void (*del)(void *));*/
-/*void		ft_dlstdelone(t_dlist *dlst, void (*del)(void *));*/
 void		ft_dlstclear(t_dlist **dlst, void (*del)(void *));
 
 #endif
