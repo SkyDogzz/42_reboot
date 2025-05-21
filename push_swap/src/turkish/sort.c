@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:32 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/21 07:52:36 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 08:45:14 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	biggest_part(t_dlist **inst, t_stack *s)
 	int		chunk;
 
 	i = 0;
-	chunk = 28;
+	chunk = 100;
 	while (ft_dlstsize(s->a) > 3)
 	{
 		idx = *(int *)s->a->content;
