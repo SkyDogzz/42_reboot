@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 11:44:02 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 12:42:47 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:55:52 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 t_dlist	*copy_stack(t_dlist *a)
 {
 	t_dlist	*copy;
-	int		*val;
 
 	copy = NULL;
 	while (a)
 	{
-		val = (int *)malloc(sizeof(int));
-		*val = *(int *)a->content;
-		ft_dlstadd_back(&copy, ft_dlstnew(val));
+		ft_dlstadd_back(&copy, ft_dlstnew(a->value));
 		a = a->next;
 	}
 	return (copy);
@@ -37,7 +34,7 @@ t_dlist	*ft_dlstmin(t_dlist *lst)
 	min = lst;
 	while (lst)
 	{
-		if (*(int *)lst->content < *(int *)min->content)
+		if (lst->value < min->value)
 			min = lst;
 		lst = lst->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 12:43:21 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 12:55:35 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:42:33 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	*fill_array_from_stack(t_dlist *a, int size)
 	i = 0;
 	while (i < size && a)
 	{
-		arr[i] = *(int *)a->content;
+		arr[i] = a->value;
 		a = a->next;
 		i++;
 	}
@@ -68,12 +68,12 @@ void	index_stack(t_dlist *a)
 	tmp = a;
 	while (tmp)
 	{
-		val = *(int *)tmp->content;
+		val = tmp->value;
 		i = -1;
 		while (++i < size)
 			if (arr[i] == val)
 				break ;
-		*(int *)tmp->content = i;
+		tmp->value = i;
 		tmp = tmp->next;
 	}
 	free(arr);
@@ -89,8 +89,8 @@ t_dlist	*find_target(t_dlist *a, int index)
 	tmp = a;
 	while (tmp)
 	{
-		val = *(int *)tmp->content;
-		if (val > index && (!best || val < *(int *)best->content))
+		val = tmp->value;
+		if (val > index && (!best || val < best->value))
 			best = tmp;
 		tmp = tmp->next;
 	}
@@ -107,7 +107,7 @@ void	fill_move(t_move *m, t_stack *s, t_dlist *n)
 	int	lb;
 
 	m->node = n;
-	m->target = find_target(s->a, *(int *)n->content);
+	m->target = find_target(s->a, n->value);
 	pa = get_pos(s->a, m->target);
 	pb = get_pos(s->b, n);
 	la = ft_dlstsize(s->a);

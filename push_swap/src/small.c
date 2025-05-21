@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 11:27:03 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 11:27:03 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:39:55 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_three(t_dlist **inst, t_stack *stack)
 	int	b;
 	int	c;
 
-	a = *(int *)stack->a->content;
-	b = *(int *)stack->a->next->content;
-	c = *(int *)stack->a->next->next->content;
+	a = stack->a->value;
+	b = stack->a->next->value;
+	c = stack->a->next->next->value;
 	if (a > b && b < c && a < c)
 		execsa(inst, stack);
 	else if (a > b && b > c)
@@ -46,7 +46,7 @@ static t_dlist	*find_min(t_dlist *stack)
 	min = stack;
 	while (stack)
 	{
-		if (*(int *)stack->content < *(int *)min->content)
+		if (stack->value < min->value)
 			min = stack;
 		stack = stack->next;
 	}

@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:09 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/19 18:33:03 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:52:33 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,21 @@ typedef struct s_move {
 	bool	rev_b;
 }	t_move;
 
+typedef enum e_op
+{
+    OP_PA,
+    OP_PB,
+    OP_SA,
+    OP_SB,
+    OP_SS,
+    OP_RA,
+    OP_RB,
+    OP_RR,
+    OP_RRA,
+    OP_RRB,
+    OP_RRR
+}   t_op;
+
 bool	ft_parse_args(int argc, char **argv, t_stack *stack);
 bool	ft_isdup(t_dlist **dlst);
 
@@ -49,7 +64,7 @@ void	swap(t_dlist **stack);
 void	rotate(t_dlist **stack);
 void	reverse_rotate(t_dlist **stack);
 
-void	add_instruction(t_dlist **dlst, const char *ins);
+void	add_instruction(t_dlist **lst, t_op op);
 void	print_instructions(t_dlist *dlst);
 
 void	execpa(t_dlist **inst, t_stack *stack);

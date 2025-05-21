@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:29:02 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 10:56:52 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 11:46:04 by skydogzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,13 @@ static bool	populate(char **words, t_dlist **dlst)
 	int		i;
 	int		result;
 	t_dlist	*new;
-	int		*content;
 
 	i = 0;
 	while (words[i])
 	{
 		if (!strict_atoi(words[i], &result))
 			return (false);
-		content = (int *)malloc(sizeof(int));
-		if (!content)
-			return (false);
-		*content = result;
-		new = ft_dlstnew(content);
+		new = ft_dlstnew(result);
 		ft_dlstadd_back(dlst, new);
 		i++;
 	}
@@ -68,7 +63,7 @@ static bool	ft_dlst_search(t_dlist **dlst, t_dlist *search)
 	act = *dlst;
 	while (act)
 	{
-		if (act != search && (*(int *)act->content == *(int *)search->content))
+		if (act != search && (act->value == search->value))
 			return (true);
 		act = act->next;
 	}
