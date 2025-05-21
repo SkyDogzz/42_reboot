@@ -17,7 +17,6 @@ SRC_FILES = dlst/ft_dlstadd_back.c \
 			dlst/ft_dlstlast.c \
 			dlst/ft_dlstnew.c \
 			dlst/ft_dlstsize_full.c \
-			instruction/instruction_utils1.c \
 			main.c \
 			parse/ft_better_atoi.c \
 			parse/parse.c \
@@ -27,6 +26,7 @@ SRC_FILES = dlst/ft_dlstadd_back.c \
 			dlst/ft_dlstmap.c \
 			dlst/ft_dlstsize.c \
 			instruction/instruction.c \
+			instruction/instruction_utils1.c \
 			instruction/instruction_utils2.c \
 			instruction/instruction_utils3.c \
 			operation/operation.c \
@@ -54,14 +54,6 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(_CYAN)[COMPILATION]$(_END) Création de l'objet : $@"
 
-clean:
-	@rm -rf $(OBJ_DIR)
-	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets."
-
-fclean: clean
-	@rm -f $(NAME)
-	@echo "$(_BLUE)[FCLEAN]$(_END) Suppression de $(NAME) et de la copie de libft."
-
 re: fclean all
 
 NAME_BONUS = checker
@@ -81,6 +73,14 @@ BONUS_SRC_FILES = parse/parse.c \
 				  dlst/ft_dlstiter.c \
 				  dlst/ft_dlstmap.c \
 				  dlst/ft_dlstsize.c \
+				  gnl/get_next_line.c \
+				  gnl/get_next_line_utils.c \
+				  operation/operation.c \
+				  instruction/instruction.c \
+				  instruction/instruction_utils1.c \
+				  instruction/instruction_utils2.c \
+				  instruction/instruction_utils3.c \
+				  bonus/exit.c \
 				  bonus/main.c
 BONUS_OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(BONUS_SRC_FILES:.c=.o))
 
@@ -88,15 +88,24 @@ bonus: $(BONUS_OBJ_FILES)
 	@$(CC) $(CFLAGS) $^ $(LDFLAGS) -o $(NAME_BONUS)
 	@echo "$(_CYAN)[BONUS]$(_END) Compilation avec les fonctionnalités bonus terminée ! ✨"
 
+clean:
+	@rm -rf $(OBJ_DIR)
+	@echo "$(_BLUE)[CLEAN]$(_END) Suppression des fichiers objets."
+
+fclean: clean
+	@rm -f $(NAME) $(NAME_BONUS)
+	@echo "$(_BLUE)[FCLEAN]$(_END) Suppression de $(NAME) et de la copie de libft."
+
+
 ascii:
 	@echo $(_CYAN)$(_BOLD)
 	@echo "PUSH SWAP"
 	@echo $(_END)
 
 test:
-	@for j in $$(seq 3 6); do \
+	@for j in $$(seq 500 500); do \
 		echo "j = $$j"; \
-		for i in $$(seq 1 10); do \
+		for i in $$(seq 500 500); do \
 			ARG=$$(shuf -i 1-$$j -n 5 | tr '\n' ' '); \
 			./push_swap $$ARG | wc -l; \
 			./push_swap $$ARG | ./checker_linux $$ARG; \

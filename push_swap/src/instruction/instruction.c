@@ -6,7 +6,7 @@
 /*   By: tstephan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:28:44 by tstephan          #+#    #+#             */
-/*   Updated: 2025/05/17 10:28:44 by tstephan         ###   ########.fr       */
+/*   Updated: 2025/05/21 07:37:08 by tstephan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	add_instruction(t_dlist **dlst, const char *ins)
 {
 	t_dlist	*new;
 
+	if (!dlst)
+		return ;
 	new = ft_dlstnew(ft_strdup(ins));
 	ft_dlstadd_back(dlst, new);
 }
